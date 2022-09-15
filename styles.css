@@ -61,7 +61,7 @@ body {
 }
 
 #result {
-  position: fixed;
+  position: absolute;
   top: 15%;
   left: 25%;
   transform: translate(50%, 50%);
@@ -206,10 +206,10 @@ button {
   }
 
   #result {
-    left: -35%;
+    left: -25%;
+    width: 350px;
+
   }
-
-
 }
 
 
@@ -219,5 +219,9 @@ button {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  #result {
+    left: 0%;
   }
 }
