@@ -68,12 +68,36 @@
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                               data-bs-parent="#accordionExample">
                               <div class="accordion-body">
-                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                                    until the collapse plugin adds the appropriate classes that we use to style each
-                                    element. These classes control the overall appearance, as well as the showing and
-                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                                    our default variables. It's also worth noting that just about any HTML can go within
-                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    The <strong>event loop</strong> is the secret behind JavaScript’s asynchronous
+                                    programming. JS executes all operations on a single thread, but using a few smart
+                                    data structures, it gives us the illusion of multi-threading. <br><br>
+                                    The <strong>call stack</strong> is responsible for keeping track of all the
+                                    operations in line to be
+                                    executed. Whenever a function is finished, it is popped from the stack. <br><br>
+                                    The <strong>event queue</strong> is responsible for sending new functions to the
+                                    stack for processing. It follows the queue data structure to maintain the correct
+                                    sequence in which all operations should be sent for execution. <br><br>
+                                    Whenever an async function is called, it is sent to a browser API. These are APIs
+                                    built into the browser. Based on the command received from the call stack, the API
+                                    starts its own single-threaded operation. <br><br>
+
+                                    An example of this is the <strong>setTimeout</strong> method. When a
+                                    <strong>setTimeout</strong>
+                                    operation is
+                                    processed in the stack, it is sent to the corresponding API which waits till the
+                                    specified time to send this operation back in for processing.
+
+                                    Where does it send the operation? The <strong>event queue</strong>. Hence, we have a
+                                    cyclic system
+                                    for running async operations in JavaScript. The language itself is single-threaded,
+                                    but the browser APIs act as separate threads. <br><br>
+
+                                    The <strong>event loop</strong> facilitates this process; it constantly checks
+                                    whether or not the
+                                    <strong>call stack</strong> is empty. If it is empty, new functions are added from
+                                    the <strong>event
+                                          queue</strong>.
+                                    If it is not, then the current function call is processed.
                               </div>
                         </div>
                   </div>
@@ -88,7 +112,7 @@
                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                               data-bs-parent="#accordionExample">
                               <div class="accordion-body">
-
+                                    <h5>8 ways to get 'undefined'- </h5>
                                     1. Variable that is not initialized will give undefined. <br>
                                     2. Function with no return. <br>
                                     3. Parameter that is not passed will be undefined. <br>
