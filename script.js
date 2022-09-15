@@ -23,6 +23,7 @@ fetch("./texts.json")
 const typeController = (e) => {
   const newLetter = e.key;
 
+
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
@@ -41,11 +42,11 @@ const typeController = (e) => {
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
-
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount++;
   }
 
   // check if given question text is equal to user typed text
@@ -90,6 +91,7 @@ const gameOver = () => {
   // restart everything
   startTime = null;
   errorCount = 0;
+
   userText = "";
   display.classList.add("inactive");
 };
