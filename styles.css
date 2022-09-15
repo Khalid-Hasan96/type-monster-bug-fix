@@ -147,11 +147,6 @@ button {
   cursor: pointer;
 }
 
-/* #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-} */
 #histories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -193,6 +188,7 @@ button {
   top: 0;
 }
 
+
 @media only screen and (max-width: 768px) {
   .box-container {
     padding: 0 20px;
@@ -208,6 +204,12 @@ button {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
+
+  #result {
+    left: -35%;
+  }
+
+
 }
 
 
